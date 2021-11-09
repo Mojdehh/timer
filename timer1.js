@@ -1,11 +1,9 @@
 
 
-const alarms = process.argv.slice(2); // store command line arguments(time intervals) into an array
-// const result = alarms.filter(alarm => typeof alarm === "number");
-// console.log(alarms)
-// console.log(result);
-// const sortedAlarms = alarms.sort((a, b) => a - b); // sort the time intervals
+const args = process.argv.slice(2); // store command line arguments(time intervals) into an array
+const alarms = args.filter(arg => !isNaN(arg));
 
+// const sortedAlarms = alarms.sort((a, b) => a - b); // sort the time intervals
 
 for (let alarm of alarms) {
   if ( alarm < 0 ) continue;
